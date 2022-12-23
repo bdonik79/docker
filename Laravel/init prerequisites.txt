@@ -1,0 +1,12 @@
+mkdir ~/laravel && cd ~/laravel
+apt install php8.1-cli
+curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+git clone https://github.com/laravel/laravel.git laravelapp Or composer create-project --prefer-dist --ignore-platform-req=ext-fileinfo laravel/laravel:^9.0 .
+docker run --rm -v $(pwd):/app composer install
+chown -R $USER:$USER ../laravelapp
+
+docker network create -d bridge laravel-net
+docker volume create laravel-vol
+docker build -t laraveldb:latest database/
+docker build -t laravelapp:latest laravelapp/
+docker build -t laravelweb:latest laravelweb/
