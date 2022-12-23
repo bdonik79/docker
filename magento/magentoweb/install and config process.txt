@@ -1,0 +1,2 @@
+mkdir -p ~/laravel-web/nginx/conf.d
+vim ~/laravel-web/nginx/conf.d/default.conf
