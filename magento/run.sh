@@ -9,6 +9,4 @@ docker run -d --name magentodb --network magento-net -p 3306:3306 magentodb:late
 docker run -d --name magentoelasticsearch --network magento-net magentoelasticsearch:latest
 docker run -d --name magentoapp -v magento-vol:/var/www/html --network magento-net magentoapp:latest
 docker run -d --name magentoweb -v magento-vol:/var/www/html --network magento-net -p 8989:8989 magentoweb:latest
-
-
 docker system prune --all
