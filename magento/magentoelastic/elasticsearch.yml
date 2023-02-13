@@ -1,6 +1,0 @@
-cluster.name: TPBD-ES-Cluster
-node.name: node01
-transport.host: localhost
-transport.tcp.port: 9300
-http.port: 9200
-network.host: 0.0.0.0
